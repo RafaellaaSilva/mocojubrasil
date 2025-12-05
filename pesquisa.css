@@ -1,0 +1,193 @@
+:root {
+  --green: #3e8534;
+  --green-dark: #365028;
+  --beige: #fdf8f3;
+  --white: #ffffff;
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+/* ============================
+   HERO COM VÍDEO
+   ============================ */
+
+.survey-hero {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Sobreposição leve para melhorar contraste */
+.survey-hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 2;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero-text h1 {
+  font-size: 40px;
+  color: var(--beige);
+  text-shadow: 0 3px 8px rgba(0,0,0,0.6);
+  margin-bottom: 12px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  color: var(--beige);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+/* ============================
+   FORMULÁRIO
+   ============================ */
+
+.survey-section {
+  padding: 80px 0;
+  background: var(--white);
+}
+
+.survey-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.survey-card {
+  background: var(--beige);
+  padding: 30px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.survey-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.15);
+}
+
+.survey-card h3 {
+  font-size: 20px;
+  color: var(--green-dark);
+  margin-bottom: 18px;
+}
+
+.survey-card label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.survey-card input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--green);
+}
+
+.survey-card textarea {
+  width: 100%;
+  height: 120px;
+  padding: 14px;
+  border-radius: var(--radius);
+  border: 1px solid #ccc;
+  resize: none;
+  font-size: 15px;
+  background: var(--white);
+  transition: border-color .3s ease;
+}
+
+.survey-card textarea:focus {
+  border-color: var(--green);
+  outline: none;
+}
+
+.survey-card input[type="number"] {
+  width: 120px;
+  padding: 12px;
+  border-radius: var(--radius);
+  border: 1px solid #ccc;
+  font-size: 16px;
+  background: var(--white);
+  transition: border-color .3s ease;
+}
+
+.survey-card input[type="number"]:focus {
+  border-color: var(--green);
+  outline: none;
+}
+
+/* ============================
+   BOTÃO DE ENVIO
+   ============================ */
+
+.survey-submit {
+  background: var(--green);
+  color: var(--white);
+  font-size: 18px;
+  padding: 16px 28px;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background .3s ease, transform .2s ease;
+}
+
+.survey-submit:hover {
+  background: var(--green-dark);
+  transform: translateY(-3px);
+}
+
+/* ============================
+   RESPONSIVO
+   ============================ */
+
+@media (max-width: 768px) {
+  .survey-hero {
+    height: 300px;
+  }
+
+  .hero-text h1 {
+    font-size: 30px;
+  }
+
+  .survey-card {
+    padding: 22px;
+  }
+
+  .survey-card h3 {
+    font-size: 18px;
+  }
+
+  .survey-submit {
+    width: 100%;
+  }
+}

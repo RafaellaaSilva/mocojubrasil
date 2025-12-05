@@ -1,0 +1,263 @@
+:root {
+  --green: #3e8534;
+  --green-dark: #365028;
+  --beige: #fdf8f3;
+  --white: #ffffff;
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+/* ============================
+   HERO / QUEM SOMOS
+   ============================ */
+
+.about-hero {
+  background: var(--beige);
+  padding: 120px 0 100px;
+}
+
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.6fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: justify;
+}
+
+.about-tag {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--green);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+.about-text h1 {
+  font-size: 40px;
+  color: var(--green-dark);
+  margin-bottom: 20px;
+    text-align: center;
+}
+
+.about-text p {
+  font-size: 17px;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.about-logo-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.about-logo-circle {
+  width: 320px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow); 
+  background: transparent; 
+  border-radius: 50%; 
+  padding: 0; 
+}
+
+
+.about-logo-circle img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+}
+
+
+/* ============================
+   MISSÃO, VISÃO, VALORES
+   ============================ */
+
+.mv-section {
+  background: var(--white);
+  padding: 100px 0;
+}
+
+.mv-title {
+  text-align: center;
+  font-size: 34px;
+  color: var(--green-dark);
+  margin-bottom: 50px;
+}
+
+.mv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.mv-card {
+  background: var(--beige);
+  padding: 28px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform .25s ease;
+  text-align: justify;
+}
+
+.mv-card:hover {
+  transform: translateY(-6px);
+}
+
+/* SLOT PARA SUAS IMAGENS */
+.mv-icon-slot {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: transparent; 
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Quando você colocar sua imagem, ela já fica perfeita */
+.mv-icon-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+
+.mv-card h3 {
+  font-size: 20px;
+  color: var(--green-dark);
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.mv-card p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.mv-values-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mv-values-list li {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 6px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.mv-values-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-size: 20px;
+  line-height: 0;
+}
+
+/* ============================
+   PROPÓSITO EXTRA
+   ============================ */
+
+.purpose-section {
+  background: var(--beige);
+  padding: 100px 0;
+}
+
+.purpose-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.purpose-text {
+  text-align: justify;
+}
+
+.purpose-text h2 {
+  font-size: 32px;
+  color: var(--green-dark);
+  margin-bottom: 20px;
+}
+
+.purpose-text p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.purpose-badge {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 40px;
+  text-align: center;
+  font-size: 18px;
+  color: var(--green-dark);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ============================
+   RESPONSIVO
+   ============================ */
+
+@media (max-width: 992px) {
+  .about-hero-grid,
+  .mv-grid,
+  .purpose-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about-text {
+    text-align: justify;
+  }
+
+  .about-logo-wrapper {
+    margin-top: 40px;
+  }
+
+  .mv-card,
+  .purpose-badge {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-text h1,
+  .mv-title,
+  .purpose-text h2 {
+    font-size: 26px;
+  }
+
+  .about-logo-circle {
+    width: 220px;
+    height: 220px;
+    padding: 30px;
+  }
+
+  .about-logo-circle img {
+    max-width: 140px;
+  }
+}

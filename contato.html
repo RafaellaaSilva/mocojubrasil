@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contato | Mocoju</title>
+  <link rel="icon" type="image/png" href="./image/logo.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="contato.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo">
+        <img src="./image/logo.png" alt="Logo Mocoju">
+        <span class="navbar__brandname">MOCOJU</span>
+      </a>
+      <nav class="navbar__menu">
+        <a href="index.html">Início</a>
+        <a href="produto.html">Produto</a>
+        <a href="sobre.html">Sobre nós</a>
+        <a href="contato.html" class="active">Contato</a>
+        <a href="pesquisa.html" class="btn btn--outline">Pesquisa</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTATO -->
+  <section class="contact-section">
+    <div class="container contact-grid">
+
+      <!-- INFORMAÇÕES DE CONTATO -->
+      <div class="contact-info">
+        <h2>Contato por Área</h2>
+
+        <div class="contact-block">
+          <h3>Contato</h3>
+          <p>De segunda a sexta-feira<br>08:00h às 18:00h</p>
+          <p>📞 0800-770-5547</p>
+          <p>📍 R. Capivari, 8<br>Jardim Nova Cajamar — Cajamar, SP<br>CEP: 07750-000</p>
+        </div>
+
+        <div class="contact-block">
+          <h3>Trabalhe conosco</h3>
+          <p>Por aqui, inovação, propósito e naturalidade guiam cada passo.<br>Vem fazer parte desse time!</p>
+        </div>
+      </div>
+
+      <!-- FORMULÁRIO -->
+      <div class="contact-form">
+        <h2>Fale com a gente</h2>
+
+        <div class="form-tabs">
+            <button class="tab active" data-role="consumidor">Sou consumidor</button>
+            <button class="tab" data-role="revendedor">Sou revendedor</button>
+            <button class="tab" data-role="rh">Sou candidato do RH</button>
+        </div>
+
+
+        <p class="form-note">Prometemos não utilizar suas informações para enviar qualquer tipo de SPAM.</p>
+
+        <form>
+          <div class="form-group">
+            <label>Nome completo*</label>
+            <input type="text" required>
+          </div>
+
+          <div class="form-group">
+            <label>Email*</label>
+            <input type="email" required>
+          </div>
+
+          <div class="form-group">
+            <label>Celular com DDD*</label>
+            <input type="tel" required>
+          </div>
+
+          <div class="form-group">
+            <label>Estado*</label>
+            <select required>
+              <option value="">Selecione</option>
+              <option>SP</option>
+              <option>RJ</option>
+              <option>MG</option>
+              <option>BA</option>
+              <!-- outros estados -->
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Cidade*</label>
+            <input type="text" required>
+          </div>
+
+          <div class="form-group">
+            <label>Cargo*</label>
+            <input type="text" required>
+          </div>
+
+          <div class="form-group">
+            <label>Qual o seu endereço?*</label>
+            <input type="text" required>
+          </div>
+
+          <div class="form-group revendedor-only">
+            <label>Qual é o CNPJ da empresa revendedora?*</label>
+            <input type="text">
+          </div>
+
+          <button type="submit" class="btn btn--primary">Cadastrar</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>MOCOJU — Do coco ao copo</p>
+      <p>© 2025 Mocoju. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+  const tabs = document.querySelectorAll('.tab');
+  const cnpjField = document.querySelector('.revendedor-only');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Remove classe ativa de todos
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      const role = tab.getAttribute('data-role');
+
+      // Mostrar ou ocultar campo CNPJ
+      if (role === 'revendedor') {
+        cnpjField.style.display = 'block';
+      } else {
+        cnpjField.style.display = 'none';
+      }
+    });
+  });
+
+  // Inicializa com revendedor como padrão
+  window.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('[data-role="revendedor"]').click();
+  });
+</script>
+
+
+</body>
+</html>
